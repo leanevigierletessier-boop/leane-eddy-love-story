@@ -10,7 +10,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Georgia', serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -20,7 +20,7 @@
             align-items: center;
             padding: 20px;
         }
-        
+
         .game-container {
             background: white;
             border-radius: 20px;
@@ -29,40 +29,40 @@
             width: 100%;
             overflow: hidden;
         }
-        
+
         .header {
             background: linear-gradient(90deg, #ff6b6b, #feca57);
             padding: 20px;
             text-align: center;
             color: white;
         }
-        
+
         .header h1 {
             font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .lives-container {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 10px;
         }
-        
+
         .heart {
             font-size: 24px;
             transition: all 0.3s;
         }
-        
+
         .heart.lost {
             opacity: 0.3;
             filter: grayscale(100%);
         }
-        
+
         .scene-container {
             padding: 30px;
         }
-        
+
         .scene-image {
             width: 100%;
             height: 300px;
@@ -71,151 +71,160 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
-        
+
         .scene-title {
             font-size: 1.8em;
             color: #333;
             margin-bottom: 15px;
             text-align: center;
         }
-        
-        .scene-narrative {
+
+        .narrative {
             font-size: 1.1em;
             line-height: 1.8;
             color: #555;
             margin-bottom: 25px;
             text-align: justify;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #ff6b6b;
         }
-        
+
         .choices-container {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-        
+
         .choice-btn {
-            padding: 18px 25px;
-            font-size: 1.1em;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
             border: none;
-            border-radius: 12px;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 1em;
             cursor: pointer;
             transition: all 0.3s;
             text-align: left;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
         }
-        
+
         .choice-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
-        
+
         .choice-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
-        
+
         .feedback {
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            animation: fadeIn 0.5s;
+            margin: 20px 0;
+            font-weight: bold;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
+
         .feedback.correct {
             background: #d4edda;
             color: #155724;
-            border: 2px solid #c3e6cb;
+            border: 1px solid #c3e6cb;
         }
-        
+
         .feedback.incorrect {
             background: #f8d7da;
             color: #721c24;
-            border: 2px solid #f5c6cb;
+            border: 1px solid #f5c6cb;
         }
-        
+
         .next-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            font-size: 1.2em;
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            background: linear-gradient(90deg, #28a745, #20c997);
             color: white;
             border: none;
-            border-radius: 12px;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
             cursor: pointer;
-            margin-top: 20px;
+            display: block;
+            margin: 20px auto;
             transition: all 0.3s;
         }
-        
+
         .next-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
         }
-        
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 10px;
+            border-radius: 5px;
+            margin: 20px 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .scene-counter {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .title-screen {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .title-screen h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .title-screen p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .start-btn {
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            border-radius: 50px;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+        }
+
         .game-over, .victory {
             text-align: center;
             padding: 40px;
         }
-        
+
         .game-over h2 {
-            color: #e74c3c;
+            color: #dc3545;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
-        
+
         .victory h2 {
-            color: #27ae60;
+            color: #28a745;
             font-size: 2.5em;
             margin-bottom: 20px;
-        }
-        
-        .restart-btn {
-            padding: 15px 40px;
-            font-size: 1.2em;
-            background: linear-gradient(135deg, #ff6b6b, #feca57);
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .restart-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-        
-        .progress-bar {
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
-            margin: 20px 30px;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #feca57);
-            transition: width 0.5s ease;
-        }
-        
-        .scene-counter {
-            text-align: center;
-            color: #888;
-            font-size: 0.9em;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -229,12 +238,12 @@
                 <span class="heart">â¤ï¸</span>
             </div>
         </div>
-        
+
         <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%"></div>
         </div>
         <div class="scene-counter" id="sceneCounter">ScÃ¨ne 1 sur 9</div>
-        
+
         <div id="gameContent"></div>
     </div>
 
@@ -244,7 +253,7 @@
                 {
                     id: 1,
                     title: "La Plage",
-                    image: "https://images.openai.com/blob/8b9c5b1c-5e2d-4b3a-9f8e-1a2b3c4d5e6f/pretty-girl-cartoon-character.png?width=1024&height=1024",
+                    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
                     narrative: "C'est l'Ã©tÃ© 2019. LÃ©ane, une jeune fille pÃ©tillante aux cheveux blonds, repÃ¨re un garÃ§on sur la plage d'Arcachon. Il porte un bracelet qui attire son attention. Elle s'approche de lui avec un sourire malicieux et lui demande : Â« C'est quoi ton bracelet ? Â» Eddy, un peu timide, rÃ©pond : Â« C'est un bracelet brÃ©silien, ma mÃ¨re me l'a offert. Â» LÃ©ane, intriguÃ©e, hÃ©site un instant avant de demander...",
                     choices: [
                         { text: "Â« Tu me le donnes ? Â»", correct: true },
@@ -256,105 +265,104 @@
                 {
                     id: 2,
                     title: "Le Coup de TÃ©lÃ©phone",
-                    image: "https://images.openai.com/blob/9c6d7e2f-8a1b-4c5d-9e0f-2a3b4c5d6e7f/cartoon-phone-call.png?width=1024&height=1024",
+                    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
                     narrative: "Quelques jours plus tard, Eddy appelle LÃ©ane. Il est nerveux et lui dit : Â« Ãcoute, je pense qu'on devrait arrÃªter de se voir... Â» LÃ©ane est surprise et un peu dÃ©Ã§ue. Mais elle sent qu'il y a quelque chose de plus derriÃ¨re ces mots. Que devrait-elle rÃ©pondre ?",
                     choices: [
-                        { text: "Â« D'accord, au revoir. Â»", correct: false },
-                        { text: "Â« Tu devrais venir me voir ce soir quand mÃªme. Â»", correct: true }
+                        { text: "Â« Pourquoi ? Qu'est-ce qui se passe ? Â»", correct: true },
+                        { text: Â« "D'accord, au revoir." Â», correct: false }
                     ],
-                    correctFeedback: "Excellente intuition ! LÃ©ane a insistÃ© doucement, et Eddy est venu. Cette soirÃ©e a tout changÃ© entre eux.",
-                    incorrectFeedback: "Dommage ! Si LÃ©ane avait acceptÃ© si facilement, leur histoire se serait arrÃªtÃ©e lÃ . Tu perds une vie !"
+                    correctFeedback: "Excellente intuition ! Eddy avait peur de s'attacher. Votre question lui a permis d'ouvrir son cÅur.",
+                    incorrectFeedback: "Dommage ! LÃ©ane n'Ã©tait pas du genre Ã  abandonner si facilement. Tu perds une vie !"
                 },
                 {
                     id: 3,
-                    title: "Le Jardin sous les Ãtoiles",
-                    image: "https://images.openai.com/blob/1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d/cartoon-starry-night.png?width=1024&height=1024",
-                    narrative: "Ce soir-lÃ , Eddy arrive chez LÃ©ane. Ils se retrouvent dans le jardin, sous un ciel Ã©toilÃ© magique. La tension est palpable, mais c'est une tension douce, pleine de promesses. La musique joue doucement en arriÃ¨re-plan. Que fait Eddy ?",
+                    title: "Le Premier Baiser",
+                    image: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?w=800",
+                    narrative: "AprÃ¨s s'Ãªtre rÃ©conciliÃ©s, LÃ©ane et Eddy se promÃ¨nent main dans main le long de la plage au coucher du soleil. L'atmosphÃ¨re est magique, leurs visages se rapprochent doucement. Eddy regarde LÃ©ane avec tendresse. Que fait-il ?",
                     choices: [
-                        { text: "Il lui propose de danser un slow.", correct: true },
-                        { text: "Il s'en va immÃ©diatement.", correct: false }
+                        { text: "Il l'embrasse tendrement.", correct: true },
+                        { text: "Il lui demande son Snapchat.", correct: false }
                     ],
-                    correctFeedback: "Romantique ! Eddy a invitÃ© LÃ©ane Ã  danser, et ce slow restera gravÃ© dans leurs mÃ©moires pour toujours.",
-                    incorrectFeedback: "Non, Eddy n'aurait pas fait Ã§a ! Il Ã©tait dÃ©jÃ  lÃ  et voulait rester. Tu perds une vie !"
+                    correctFeedback: "ð Magique ! C'est ainsi qu'a eu lieu leur premier baiser, un moment gravÃ© dans leurs mÃ©moires pour toujours.",
+                    incorrectFeedback: "Non, Eddy Ã©tait bien plus romantique que Ã§a ! Tu perds une vie !"
                 },
                 {
                     id: 4,
-                    title: "Le Renault Master",
-                    image: "https://images.openai.com/blob/2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e/cartoon-van-interior.png?width=1024&height=1024",
-                    narrative: "Plus tard dans la soirÃ©e, ils se retrouvent dans le Renault Master d'Eddy. L'ambiance est intime. Leurs visages se rapprochent doucement. Eddy regarde LÃ©ane avec tendresse. Que fait-il ?",
+                    title: "La Fin de l'ÃtÃ©",
+                    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800",
+                    narrative: "L'Ã©tÃ© touche Ã  sa fin. LÃ©ane doit rentrer chez elle, loin d'Arcachon. Leur idylle d'Ã©tÃ© semble condamnÃ©e Ã  rester un souvenir. Les larmes aux yeux, ils se disent au revoir. Que dÃ©cide LÃ©ane ?",
                     choices: [
-                        { text: "Il lui fait des guilis (yeux doux).", correct: true },
-                        { text: "Il dÃ©marre la voiture et part.", correct: false }
+                        { text: "Elle propose de continuer Ã  se voir malgrÃ© la distance.", correct: true },
+                        { text: "Elle accepte que c'Ã©tait juste un Ã©tÃ©.", correct: false }
                     ],
-                    correctFeedback: "C'est Ã§a ! Les cÃ©lÃ¨bres guilis d'Eddy ! Ces regards complices qui ont fait fondre le cÅur de LÃ©ane.",
-                    incorrectFeedback: "Pas du tout ! Eddy Ã©tait trop captivÃ© par LÃ©ane pour partir. Tu perds une vie !"
+                    correctFeedback: "C'est Ã§a l'amour ! LÃ©ane et Eddy ont dÃ©cidÃ© de se battre pour leur histoire, malgrÃ© les 200 kilomÃ¨tres qui les sÃ©paraient.",
+                    incorrectFeedback: "Non ! LÃ©ane Ã©tait dÃ©terminÃ©e Ã  ce que cette histoire dure. Tu perds une vie !"
                 },
                 {
                     id: 5,
-                    title: "Le Pacte des Guilis",
-                    image: "https://images.openai.com/blob/3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f/cartoon-couple-laughing.png?width=1024&height=1024",
-                    narrative: "Les guilis continuent, et LÃ©ane rit aux Ã©clats. Elle trouve Ã§a adorable et drÃ´le Ã  la fois. Mais soudain, elle prend un air sÃ©rieux et dit : Â« On arrÃªte les guilis maintenant ! Â» Eddy, un peu dÃ©Ã§u mais comprÃ©hensif, accepte. Mais que se passe-t-il ensuite ?",
+                    title: "La Relation Ã  Distance",
+                    image: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800",
+                    narrative: "Pendant des mois, LÃ©ane et Eddy entretiennent leur relation Ã  distance. Ils s'envoient des messages tous les jours, s'appellent pendant des heures, et se voient dÃ¨s que possible. Mais un jour, Eddy semble distant. Que fait LÃ©ane ?",
                     choices: [
-                        { text: "Eddy l'embrasse passionnÃ©ment.", correct: true },
-                        { text: "Ils rentrent chacun chez soi.", correct: false }
+                        { text: "Elle lui demande directement ce qui ne va pas.", correct: true },
+                        { text: "Elle l'ignore et attend qu'il revienne.", correct: false }
                     ],
-                    correctFeedback: "Magique ! Ce premier baiser a scellÃ© leur amour. Le dÃ©but d'une belle histoire !",
-                    incorrectFeedback: "Non, ce n'est pas ce qui s'est passÃ© ! Il y avait trop de magie dans l'air. Tu perds une vie !"
+                    correctFeedback: "Bravo ! La communication est la clÃ©. Eddy avait juste besoin de se confier sur ses doutes.",
+                    incorrectFeedback: "L'ignorer n'aurait fait qu'empirer les choses. Tu perds une vie !"
                 },
                 {
                     id: 6,
-                    title: "La Fin de l'ÃtÃ©",
-                    image: "https://images.openai.com/blob/4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a/cartoon-sad-goodbye.png?width=1024&height=1024",
-                    narrative: "L'Ã©tÃ© touche Ã  sa fin. Eddy doit rentrer chez lui, loin d'Arcachon. Leur idylle d'Ã©tÃ© semble condamnÃ©e Ã  rester un souvenir. Les larmes aux yeux, ils se disent au revoir. Que dÃ©cide Eddy ?",
+                    title: "La Visite Surprise",
+                    image: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800",
+                    narrative: "Pour leur premier anniversaire, Eddy dÃ©cide de surprendre LÃ©ane. Il prend le train sans prÃ©venir et arrive chez elle avec des fleurs et un bracelet assorti au sien. Comment rÃ©agit LÃ©ane ?",
                     choices: [
-                        { text: "Il repart chez lui comme prÃ©vu.", correct: true },
-                        { text: "Il dÃ©cide de tout plaquer et rester.", correct: false }
+                        { text: "Elle est touchÃ©e et fond en larmes de joie.", correct: true },
+                        { text: "Elle est en colÃ¨re qu'il n'ait pas prÃ©venu.", correct: false }
                     ],
-                    correctFeedback: "C'est vrai, Eddy est reparti... mais ce n'Ã©tait qu'un au revoir, pas un adieu !",
-                    incorrectFeedback: "Pas exactement. Eddy est repartit, mais leur histoire ne s'est pas arrÃªtÃ©e pour autant. Tu perds une vie !"
+                    correctFeedback: "ð Quelle belle surprise ! LÃ©ane Ã©tait tellement heureuse de voir Eddy qu'elle a pleurÃ© de joie.",
+                    incorrectFeedback: "LÃ©ane n'aurait jamais rÃ©agi comme Ã§a Ã  une si belle surprise ! Tu perds une vie !"
                 },
                 {
                     id: 7,
-                    title: "L'Appel du Retour",
-                    image: "https://images.openai.com/blob/5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b/cartoon-phone-long-distance.png?width=1024&height=1024",
-                    narrative: "Des semaines passent. Eddy et LÃ©ane restent en contact par tÃ©lÃ©phone. Un jour, LÃ©ane appelle Eddy, la voix tremblante : Â« Je ne peux plus supporter cette distance... Â» Eddy sent son cÅur se serrer. Que fait-il ?",
+                    title: "L'IntÃ©gration",
+                    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800",
+                    narrative: "Au fil des mois, Eddy devient proche de la famille de LÃ©ane. Les parents de LÃ©ane l'adorent, et ses amis l'accueillent Ã  bras ouverts. Un jour, le pÃ¨re de LÃ©ane propose Ã  Eddy de...",
                     choices: [
-                        { text: "Il dÃ©cide de revenir la voir.", correct: true },
-                        { text: "Il lui dit de passer Ã  autre chose.", correct: false }
+                        { text: "Participer Ã  un barbecue familial.", correct: true },
+                        { text: "Lui prÃªter de l'argent.", correct: false }
                     ],
-                    correctFeedback: "L'amour l'a emportÃ© ! Eddy est revenu et ils ont dÃ©cidÃ© de ne plus jamais se quitter.",
-                    incorrectFeedback: "Impossible ! Eddy Ã©tait trop amoureux pour abandonner. Tu perds une vie !"
+                    correctFeedback: "Exact ! Les barbecues familiaux sont devenus une tradition, et Eddy y Ã©tait toujours le bienvenu.",
+                    incorrectFeedback: "Ce n'Ã©tait pas du tout Ã§a ! Tu perds une vie !"
                 },
                 {
                     id: 8,
-                    title: "La Corne Ã  Arcachon",
-                    image: "https://images.openai.com/blob/6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c/cartoon-restaurant-proposal.png?width=1024&height=1024",
-                    narrative: "Un an plus tard, Eddy et LÃ©ane sont de retour au restaurant La Corne Ã  Arcachon, lÃ  oÃ¹ tout a commencÃ©. L'endroit est magique, les lumiÃ¨res tamisÃ©es crÃ©ent une ambiance romantique parfaite. Eddy a un air mystÃ©rieux et tendre. Que se passe-t-il ?",
+                    title: "Les Vacances Ensemble",
+                    image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800",
+                    narrative: "L'Ã©tÃ© suivant, LÃ©ane et Eddy partent en vacances ensemble avec leurs familles respectives qui s'entendent Ã  merveille. Ils profitent de chaque instant, crÃ©ant des souvenirs inoubliables. Que font-ils un soir sur la plage ?",
                     choices: [
-                        { text: "Eddy demande LÃ©ane en mariage.", correct: true },
-                        { text: "Ils commandent juste Ã  manger.", correct: false }
+                        { text: "Ils Ã©crivent leurs prÃ©noms dans le sable.", correct: true },
+                        { text: "Ils font un chÃ¢teau de sable gÃ©ant.", correct: false }
                     ],
-                    correctFeedback: "OUI ! Eddy a posÃ© le genou Ã  terre et a demandÃ© LÃ©ane en mariage. Elle a dit OUI !",
-                    incorrectFeedback: "Il se passait quelque chose de beaucoup plus spÃ©cial ce soir-lÃ  ! Tu perds une vie !"
+                    correctFeedback: "ð« Romantique ! Ils ont Ã©crit 'LÃ©ane â¤ï¸ Eddy' dans le sable, et Eddy a pris une photo qu'il garde encore.",
+                    incorrectFeedback: "Non, c'Ã©tait plus romantique que Ã§a ! Tu perds une vie !"
                 },
                 {
                     id: 9,
-                    title: "La ThaÃ¯lande",
-                    image: "https://images.openai.com/blob/7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d/cartoon-thailand-beach.png?width=1024&height=1024",
-                    narrative: "Pour leur voyage de noces, Eddy et LÃ©ane se rendent en ThaÃ¯lande. Sur une plage paradisiaque, au coucher du soleil, ils se promettent l'un Ã  l'autre une vie de bonheur. Eddy prend la main de LÃ©ane et lui dit : Â« Je veux... Â» ComplÃ©tez sa phrase :",
+                    title: "La Demande",
+                    image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800",
+                    narrative: "Un an aprÃ¨s leur rencontre, Eddy emmÃ¨ne LÃ©ane au restaurant La Corne Ã  Arcachon, lÃ  oÃ¹ tout a commencÃ©. L'endroit est magique, les lumiÃ¨res tamisÃ©es crÃ©ent une ambiance romantique. Eddy se met Ã  genoux et...",
                     choices: [
-                        { text: "Â« Passer le reste de ma vie avec toi. Â»", correct: true },
-                        { text: "Â« Rentrer Ã  la maison demain. Â»", correct: false }
+                        { text: "Lui demande d'Ãªtre sa petite amie officiellement.", correct: true },
+                        { text: "Lui demande de l'Ã©pouser.", correct: false }
                     ],
-                    correctFeedback: "C'est la fin parfaite de cette belle histoire d'amour ! Merci d'avoir jouÃ© !",
-                    incorrectFeedback: "Ce n'est pas trÃ¨s romantique comme fin ! Heureusement, ce n'est pas ce qui s'est passÃ©. Tu perds une vie !"
+                    correctFeedback: "ð C'est Ã§a ! Eddy a demandÃ© Ã  LÃ©ane d'Ãªtre sa petite amie officiellement, scellant leur amour de faÃ§on solennelle. C'Ã©tait le plus beau jour de leur vie !",
+                    incorrectFeedback: "Pas tout de suite ! Ils Ã©taient encore jeunes, mais leur amour Ã©tait dÃ©jÃ  trÃ¨s fort. Tu perds une vie !"
                 }
             ]
         };
 
         let currentScene = 0;
         let lives = 3;
-        let answered = false;
 
         function initGame() {
             currentScene = 0;
@@ -369,27 +377,37 @@
             for (let i = 0; i < 3; i++) {
                 const heart = document.createElement('span');
                 heart.className = 'heart' + (i >= lives ? ' lost' : '');
-                heart.textContent = 'â¤ï¸';
+                heart.innerHTML = 'â¤ï¸';
                 container.appendChild(heart);
             }
         }
 
         function showScene() {
-            answered = false;
             const scene = gameData.scenes[currentScene];
             const content = document.getElementById('gameContent');
-            
             const progress = ((currentScene) / gameData.scenes.length) * 100;
+            
             document.getElementById('progressFill').style.width = progress + '%';
             document.getElementById('sceneCounter').textContent = 'ScÃ¨ne ' + (currentScene + 1) + ' sur ' + gameData.scenes.length;
+
+            let html = '<div class="scene-container">';
+            html += '<img src="' + scene.image + '" alt="' + scene.title + '" class="scene-image" onerror="this.src='https://via.placeholder.com/800x300/667eea/ffffff?text=' + encodeURIComponent(scene.title) + ''">';
+            html += '<h2 class="scene-title">' + scene.title + '</h2>';
+            html += '<p class="narrative">' + scene.narrative + '</p>';
+            html += '<div class="choices-container">';
             
-            content.innerHTML = '<div class="scene-container"><img src="' + scene.image + '" alt="' + scene.title + '" class="scene-image" onerror="this.src='https://via.placeholder.com/800x300/667eea/ffffff?text=' + encodeURIComponent(scene.title) + ''"><h2 class="scene-title">' + scene.title + '</h2><div class="scene-narrative">' + scene.narrative + '</div><div class="choices-container" id="choicesContainer">' + scene.choices.map((choice, index) => '<button class="choice-btn" onclick="makeChoice(' + index + ')">' + choice.text + '</button>').join('') + '</div><div id="feedback"></div></div>';
+            scene.choices.forEach((choice, index) => {
+                html += '<button class="choice-btn" onclick="makeChoice(' + index + ')">' + choice.text + '</button>';
+            });
+            
+            html += '</div>';
+            html += '<div id="feedback"></div>';
+            html += '</div>';
+            
+            content.innerHTML = html;
         }
 
         function makeChoice(choiceIndex) {
-            if (answered) return;
-            answered = true;
-            
             const scene = gameData.scenes[currentScene];
             const choice = scene.choices[choiceIndex];
             const feedbackDiv = document.getElementById('feedback');
@@ -398,23 +416,24 @@
             buttons.forEach(btn => btn.disabled = true);
             
             if (choice.correct) {
-                feedbackDiv.innerHTML = '<div class="feedback correct">â ' + scene.correctFeedback + '</div><button class="next-btn" onclick="nextScene()">Continuer â¡ï¸</button>';
+                feedbackDiv.innerHTML = '<div class="feedback correct">â ' + scene.correctFeedback + '</div>';
             } else {
+                feedbackDiv.innerHTML = '<div class="feedback incorrect">â ' + scene.incorrectFeedback + '</div>';
                 lives--;
                 updateLives();
-                
-                if (lives <= 0) {
-                    feedbackDiv.innerHTML = '<div class="feedback incorrect">â ' + scene.incorrectFeedback + '</div>';
-                    setTimeout(gameOver, 2000);
-                } else {
-                    feedbackDiv.innerHTML = '<div class="feedback incorrect">â ' + scene.incorrectFeedback + '</div><button class="next-btn" onclick="nextScene()">Continuer â¡ï¸</button>';
-                }
+            }
+            
+            if (lives <= 0) {
+                setTimeout(gameOver, 2000);
+            } else if (currentScene >= gameData.scenes.length - 1) {
+                setTimeout(victory, 2000);
+            } else {
+                feedbackDiv.innerHTML += '<button class="next-btn" onclick="nextScene()">Continuer â¡ï¸</button>';
             }
         }
 
         function nextScene() {
             currentScene++;
-            
             if (currentScene >= gameData.scenes.length) {
                 victory();
             } else {
@@ -424,18 +443,27 @@
 
         function gameOver() {
             const content = document.getElementById('gameContent');
-            content.innerHTML = '<div class="game-over"><h2>ð Game Over</h2><p style="font-size: 1.2em; margin-bottom: 30px;">Tu as perdu toutes tes vies !<br>Mais l'histoire de LÃ©ane et Eddy est plus forte que Ã§a...</p><button class="restart-btn" onclick="initGame()">ð Rejouer</button></div>';
             document.getElementById('progressFill').style.width = '100%';
+            document.getElementById('sceneCounter').textContent = 'Game Over';
+            
+            content.innerHTML = '<div class="game-over"><h2>ð¢ Game Over</h2><p>Tu as perdu toutes tes vies ! L'histoire de LÃ©ane et Eddy mÃ©rite d'Ãªtre vÃ©cue jusqu'au bout...</p><button class="start-btn" onclick="initGame()">ð Rejouer</button></div>';
         }
 
         function victory() {
             const content = document.getElementById('gameContent');
-            content.innerHTML = '<div class="victory"><h2>ð FÃ©licitations ! ð</h2><p style="font-size: 1.2em; margin-bottom: 20px;">Tu as terminÃ© l'histoire de LÃ©ane et Eddy !</p><p style="font-size: 1.1em; color: #666; margin-bottom: 30px;">Une belle histoire d'amour qui a commencÃ© sur une plage d'Arcachon<br>et continue encore aujourd'hui... ð</p><button class="restart-btn" onclick="initGame()">ð Rejouer</button></div>';
             document.getElementById('progressFill').style.width = '100%';
-            document.getElementById('sceneCounter').textContent = 'Histoire terminÃ©e !';
+            document.getElementById('sceneCounter').textContent = 'Victoire !';
+            
+            content.innerHTML = '<div class="victory"><h2>ð FÃ©licitations !</h2><p>Tu as vÃ©cu toute l'histoire de LÃ©ane et Eddy ! Leur amour a survÃ©cu Ã  la distance, aux doutes et au temps. Une belle leÃ§on d'amour et de persÃ©vÃ©rance ! ð</p><button class="start-btn" onclick="initGame()">ð Rejouer</button></div>';
         }
 
-        initGame();
+        function showTitleScreen() {
+            const content = document.getElementById('gameContent');
+            content.innerHTML = '<div class="title-screen"><h2>ð Bienvenue ð</h2><p>Plonge dans l'histoire romantique de LÃ©ane et Eddy, deux Ã¢mes qui se sont rencontrÃ©es sur une plage d'Arcachon en 2019.<br><br>Fais les bons choix pour les aider Ã  vivre leur belle histoire d'amour !<br><br>Tu as 3 vies. â¤ï¸â¤ï¸â¤ï¸</p><button class="start-btn" onclick="initGame()">â¶ï¸ Commencer l'aventure</button></div>';
+        }
+
+        // DÃ©marrer avec l'Ã©cran de titre
+        showTitleScreen();
     </script>
 </body>
 </html>
